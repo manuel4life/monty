@@ -23,7 +23,7 @@ void (*comp_opc_func(char *s))(stack_t **stack, unsigned int line_number)
 
 	while (opcs[i].opcode)
 	{
-		if (opcs[i].opcode[0] == s[0] && s[1] == '\0')
+		if (strcmp(opcs[i].opcode, s) == 0)
 			return (opcs[i].f);
 		i++;
 	}

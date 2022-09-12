@@ -1,5 +1,7 @@
 #include "monty.h"
 
+glb_v v_glb;
+
 /**
  * push - opcode pushes an element to the stack
  * @stack: pointer start location in stack
@@ -11,12 +13,12 @@ void push(stack_t **stack, unsigned int line_number)
 	stack_t *new_node, *top;
 	char **tokens;
 	int stack_data;
-	char *lines = lines;
+	/*char *lines = lines;*/
 
-	tokens = tokenize(lines);
+	tokens = tokenize(v_glb.line);
 	stack_data = atoi(tokens[1]);
 
-	if (isdigit(stack_data) == 0)
+	if (isdigit(tokens[1]) == 0)
 	{
 		printf("L%d: usage push integer\n", line_number);
 		exit(EXIT_FAILURE);

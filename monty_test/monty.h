@@ -38,8 +38,19 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct global_v - global variables
+ * @line
+ *
+ * Description: global variables used
+ */
+typedef struct global_v
+{
+	char *line;
+}glb_v;
+
 /* extern unsigned int line_number; */
-extern char *lines;
+extern glb_v v_glb;
 
 /* Prototypes */
 char **tokenize(char *line_input);
